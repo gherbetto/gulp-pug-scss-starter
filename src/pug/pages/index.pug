@@ -1,0 +1,23 @@
+extends ../layouts/head.pug 
+
+block variables
+	- const pagetitle = "Главная";
+
+block content
+	main.page
+		.container
+			.page__content
+				h1 Привкет
+			include ../components/bread
+			include ../components/bread-title
+			include ../components/pag
+		.container.my-5 
+			.main-slider
+				.main-slider__items
+					div
+						img(src="img/c-map.webp", alt="")
+					div
+						img(src="img/c-map.webp", alt="")
+					div
+						img(src="img/c-map.webp", alt="")
+				.main-slider__dots

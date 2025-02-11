@@ -1,0 +1,32 @@
+include mixins.pug
+
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1,shrink-to-fit=no')
+        link(rel='preconnect', href='https://fonts.googleapis.com')
+        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+        link(href='css/libs/bootstrap.min.css', rel='stylesheet')
+        link(href='css/libs/slick.min.css', rel='stylesheet')
+        link(href='css/styles.min.css', rel='stylesheet')
+        link(rel="icon" href="fav.svg" type="image/svg+xml")
+        title #{title}
+        script(src='js/libs/jquery.min.js' defer)
+        script(src='js/libs/bootstrap.min.js' defer)
+        script(src='js/libs/slick.min.js' defer)
+        script(src='js/libs/anime.min.js' defer)
+        script(src='js/index.min.js' defer)
+    body
+        include svg.pug
+        block modal
+        include ../components/backdrop.pug
+        include ../components/modal.pug
+        .wrapper 
+            block header
+                include header.pug
+            block content 
+            block footer
+                include footer.pug

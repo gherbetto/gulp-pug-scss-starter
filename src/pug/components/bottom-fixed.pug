@@ -1,0 +1,24 @@
+include ../layout/mixins.pug
+.bottom-fixed
+    .container 
+        .bottom-fixed__items 
+            button.controls-item.empty.btn-catalog#js-header-menu(href="#")
+                .controls-item__icon
+                    +svg('catalog', 18, 18)(class="icon")
+                span Каталог       
+            a.controls-item.empty(href="#")
+                .controls-item__icon
+                    +svg('compare', 26, 20)(class="icon")
+                span Сравнить
+            a.controls-item.empty(href="#")
+                .controls-item__icon
+                    +svg('fav', 26, 22)(class="icon")
+                span Избранное
+            a.controls-item.empty(href="#")
+                .controls-item__icon
+                    +svg('user', 20, 24)(class="icon")
+                span Войти
+            a.controls-item(href="#")
+                .controls-item__icon
+                    +svg('cart', 20, 24)(class="icon")
+                span 29 700 ₽

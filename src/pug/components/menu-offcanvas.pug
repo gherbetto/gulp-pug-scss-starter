@@ -1,0 +1,7 @@
+include ../layout/mixins.pug
+.offcanvas.offcanvas-start.menu-offcanvas#menu-offcanvas
+
+    button.offcanvas__close(type="button" data-bs-dismiss="offcanvas" aria-label="Закрыть")
+        +svg('close', 12)(class='icon color-white')
+
+    .offcanvas__content

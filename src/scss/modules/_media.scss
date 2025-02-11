@@ -1,0 +1,27 @@
+@media (max-width: $xxl-break) and (min-width: 0px) {
+
+}
+
+@media (max-width: $xl-break) and (min-width: 0px) {
+
+}
+
+@media (max-width: $lg-break) and (min-width: 0px) {
+    .page__content .cols-2-1 {gap: 40px;}
+    .page__content table {display: block;overflow-x: auto;white-space: nowrap; width: 100%;}
+    .open-menu {padding-right: 0px;}
+    .bottom-fixed { display: flex; }
+    .offcanvas__close { right: -30px;}
+}
+
+@media (max-width: $md-break) and (min-width: 0px) {
+
+}
+
+@media (max-width: $sm-break) and (min-width: 0px) {
+
+}
+
+@media (max-width: $xs-break) and (min-width: 0px) {
+
+}
