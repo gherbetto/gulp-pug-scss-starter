@@ -1,4 +1,17 @@
+# IDE directories
+.vscode/*
+.idea/*
+
+# dependencies
 /node_modules
+
+#production
+/assets
 /dist
+
+# misc
+.DS_Store
 package-lock.json
-gulp-build.zip
+assets.old.*
+assets.*
+*.zip
