@@ -1,0 +1,165 @@
+// Font Sizes Map
+$type-scales: (
+  "display-2xl": (
+    3rem,
+    clamp(3rem, 2.4rem + 3vw, 6rem),
+  ),
+  "display-xl": (
+    2rem,
+    clamp(2rem, 1.6rem + 2vw, 4rem),
+  ),
+  "display-l": (
+    1.5rem,
+    clamp(1.5rem, 1.2rem + 1.5vw, 3rem),
+  ),
+  "display-m": (
+    1.25rem,
+    clamp(1.25rem, 1rem + 1.25vw, 2.5rem),
+  ),
+  "heading-l": (
+    1.5rem,
+    clamp(1.5rem, 1.4rem + 0.5vw, 2rem),
+  ),
+  "body-l": (
+    1.25rem,
+    clamp(1.25rem, 1.1rem + 0.75vw, 2rem),
+  ),
+  "body-m": (
+    1.125rem,
+    clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem),
+  ),
+  "body-s": (
+    1rem,
+    clamp(1rem, 0.95rem + 0.25vw, 1.25rem),
+  ),
+  "body-xs": (
+    0.875rem,
+    clamp(0.875rem, 0.85rem + 0.125vw, 1rem),
+  ),
+  "body-xl": (
+    2rem,
+    clamp(2rem, 1.6rem + 2vw, 4rem),
+  ),
+);
+
+@mixin font-style($size, $weight: 400) {
+  // 1. Set font family based on size name
+  @if str-index($size, "display") {
+    font-family: $font-secondary;
+    line-height: $line-height-secondary;
+  } @else {
+    font-family: $font-primary;
+    line-height: $line-height-primary;
+  }
+
+  font-style: normal;
+  font-weight: $weight;
+
+  // 2. Apply sizes from the map
+  @if map-has-key($type-scales, $size) {
+    $size-values: map-get($type-scales, $size);
+    font-size: nth($size-values, 1); // Fallback
+    font-size: nth($size-values, 2); // Clamp
+  } @else {
+    @warn "Unknown font size: #{$size}";
+  }
+}
+
+// how to use
+
+// // Uses Kurale, weight 400 (default)
+// .hero-title {
+//   @include font-style("display-2xl");
+// }
+
+// // Uses Proxima Nova, weight 500
+// .card-text-large {
+//   @include font-style("body-l", 500);
+// }
+
+// // Uses Proxima Nova, weight 800
+// .label-bold {
+//   @include font-style("body-xs", 800);
+// }
+
+// //displays
+
+// @mixin font-display-2xl {
+//   font-family: $font-secondary;
+//   line-height: $line-height-secondary;
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 3rem;
+//   font-size: clamp(3rem, 2.4rem + 3vw, 6rem);
+// }
+
+// @mixin font-display-xl {
+//   font-family: $font-secondary;
+//   line-height: $line-height-secondary;
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 2rem;
+//   font-size: clamp(2rem, 1.6rem + 2vw, 4rem);
+// }
+
+// // headings and subheadings
+
+// @mixin font-heading-l {
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 1.5rem;
+//   font-size: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
+// }
+
+// // body text
+
+// @mixin font-body-l {
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 1.25rem;
+//   font-size: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
+// }
+// @mixin font-body-l-medium {
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 1.25rem;
+//   font-size: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
+// }
+// @mixin font-body-m {
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 1.125rem;
+//   font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
+// }
+// @mixin font-body-s {
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 1rem;
+//   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+// }
+
+// @mixin font-body-s-medium {
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 1rem;
+//   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+// }
+
+// @mixin font-body-s-bold {
+//   font-style: normal;
+//   font-weight: 800;
+//   font-size: 1rem;
+//   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+// }
+// @mixin font-body-xs {
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 0.875rem;
+//   font-size: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);
+// }
+// @mixin font-body-xs-bold {
+//   font-style: normal;
+//   font-weight: 800;
+//   font-size: 0.875rem;
+//   font-size: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);
+// }

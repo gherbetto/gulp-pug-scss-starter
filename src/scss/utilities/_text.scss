@@ -1,0 +1,26 @@
+.text {
+  &-preview {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    &-open {
+      cursor: pointer;
+    }
+    &.open {
+      line-clamp: inherit;
+    }
+  }
+  &-line-1 {
+    line-clamp: 1;
+  }
+  &-line-2 {
+    line-clamp: 2;
+  }
+  &-line-3 {
+    line-clamp: 3;
+  }
+  &--is-clamped {
+    cursor: help;
+  }
+}

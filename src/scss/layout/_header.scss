@@ -1,0 +1,31 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: #fff;
+  z-index: 10;
+  transition: $trans;
+
+  &__logo {
+    width: 120px;
+    height: 100%;
+    object-fit: contain;
+    transition: $trans;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: $trans;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.bestweb {
+  .bw-logo {
+    fill: var(--bw-logo);
+    transition: $trans;
+  }
+  .bw-logo-text {
+    color: var(--bw-logo-text);
+    transition: $trans;
+  }
+  .bw-text {
+    transition: $trans;
+    color: var(--bw-text);
+    opacity: var(--bw-opacity);
+  }
+  .bw-text-hover {
+    transition: $trans;
+    color: var(--bw-text-hover);
+    opacity: var(--bw-opacity-hover);
+  }
+}
+
+.breakpoints {
+  @include breakpoint(xxl) {
+    font-size: 13px;
+  }
+  @include breakpoint(xl) {
+    font-size: 12px;
+  }
+  @include breakpoint(lg) {
+    display: none;
+  }
+}

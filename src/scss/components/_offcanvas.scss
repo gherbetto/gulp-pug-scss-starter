@@ -1,0 +1,26 @@
+.offcanvas {
+  padding: 40px 20px 80px 20px;
+  &__content {
+    overflow: auto;
+    padding: 0 15px;
+  }
+  &__close {
+    position: absolute;
+    top: 0px;
+    right: -40px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--size-40-30);
+    height: var(--size-40-30);
+    color: #fff;
+    background: #000;
+    transition: $trans;
+    @media (hover: hover) {
+      &:hover {
+        background: var(--main-color-hover);
+      }
+    }
+  }
+}

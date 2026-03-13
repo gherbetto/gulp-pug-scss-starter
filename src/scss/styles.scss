@@ -1,2 +1,32 @@
-@import "modules/_main";
-@import "modules/_media";
+@charset 'utf-8';
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/tokens";
+
+@import "base/fonts";
+@import "base/reset";
+@import "base/animations";
+
+@import "utilities/text";
+@import "utilities/icon";
+@import "utilities/misc";
+
+@import "layout/app";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/wrapper";
+
+@import "components/backdrop";
+@import "components/dropdown";
+@import "components/offcanvas";
+@import "components/breadcrumb";
+@import "components/form";
+@import "components/pagination";
+@import "components/bottom-fixed";
+@import "components/catalog-item";
+
+@import "vendors/bootstrap.min";
+@import "vendors/slick.min";
+
+@import "pages/page";
