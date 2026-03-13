@@ -7,11 +7,11 @@ export function copyFav() {
 export function copyStylesLibs() {
   return app.gulp
     .src(app.path.src.libsStyles)
-    .pipe(app.gulp.dest(`${app.path.dist.styles}/libs/`));
+    .pipe(app.gulp.dest(`${app.path.dist.styles}/vendors/`));
 }
 
 export function copyJsLibs() {
   return app.gulp
-  .src(app.path.src.libsScripts)
-  .pipe(app.gulp.dest(`${app.path.dist.scripts}/libs/`));
+    .src(app.path.src.libsScripts)
+    .pipe(app.gulp.dest(`${app.path.dist.scripts}/libs/`));
 }

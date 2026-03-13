@@ -13,8 +13,8 @@ export function styles() {
   return app.gulp
     .src(app.path.src.styles)
     .pipe(sourcemaps.init())
-    .pipe(gcmq())
     .pipe(sass().on("error", sass.logError))
+    .pipe(gcmq())
     .pipe(
       autoprefixer({
         overrideBrowserslist: ['last 3 versions'],

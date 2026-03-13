@@ -31,6 +31,24 @@ import { exportFonts } from "./gulp/tasks/fonts.js";
 import { zipRun } from "./gulp/tasks/zip.js";
 import { webpRun } from "./gulp/tasks/webp.js";
 
+// Отдельные задачи (чтобы работали команды вида `gulp styles`)
+gulp.task("clean", clean);
+gulp.task("pug", pug);
+gulp.task("styles", styles);
+gulp.task("scripts", scripts);
+gulp.task("img", img);
+gulp.task("copy", gulp.parallel(copyFav, copyStylesLibs, copyJsLibs));
+
+// Сборка без watch
+gulp.task(
+  "build",
+  gulp.series(
+    clean,
+    gulp.parallel(copyFav, copyStylesLibs, copyJsLibs),
+    gulp.parallel(pug, styles, scripts, img, webpRun)
+  )
+);
+
 //Выполнение сценария по умолчанию
 gulp.task(
   "default",

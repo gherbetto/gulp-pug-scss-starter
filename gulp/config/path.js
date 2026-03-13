@@ -3,7 +3,7 @@ import * as nodePath from "path";
 export const rootFolder = nodePath.basename(nodePath.resolve());
 
 //Путь исходных файлов и путь результирующих файлов
-export const distFolder = "assets";
+export const distFolder = "dist";
 export const srcFolder = "src";
 export const path = {
   dist: {
@@ -16,7 +16,7 @@ export const path = {
   src: {
     html: `${srcFolder}/*.html`,
     pug: `${srcFolder}/pug/pages/*.pug`,
-    libsStyles: `${srcFolder}/scss/libs/*.css`,
+    libsStyles: `${srcFolder}/scss/vendors/*.css`,
     styles: `${srcFolder}/scss/styles.scss`,
     scripts: `${srcFolder}/js/index.js`,
     libsScripts: `${srcFolder}/js/libs/*.js`,

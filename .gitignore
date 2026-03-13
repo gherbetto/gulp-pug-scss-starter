@@ -6,12 +6,11 @@
 /node_modules
 
 #production
-/assets
 /dist
 
 # misc
 .DS_Store
 package-lock.json
-assets.old.*
-assets.*
+dist.old.*
+dist.*
 *.zip
